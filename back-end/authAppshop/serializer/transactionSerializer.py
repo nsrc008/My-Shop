@@ -1,12 +1,12 @@
 from authAppshop.models.account     import  Account
 from authAppshop.models.user        import  User
-from authAppshop.models.transaction import Transaction
+from authAppshop.models.transaction import  Transaction
 from rest_framework                 import  serializers
 
 class TransactionSerializer(serializers.ModelSerializer):
     class Meta:
         model   = Transaction
-        fields  = ['origin_account', 'destiny_account', 'amount', 'registre_date', 'note']
+        fields  = ['origin_account', 'destiny_account', 'amount', 'register_date', 'note']
 
     def to_representation(self, obj):
         transaction     = Transaction.objects.get(id=obj.id)
